@@ -6,19 +6,27 @@
     <title>Document</title>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 <body>
+
     <div>
         <canvas id="myChart"></canvas>
+    </div>
+    <br>
+    <br>
+    <div>
+        <canvas id="myChart_2" ></canvas>
     </div>
 </body>
 <script>
     const grafico = document.getElementById('myChart');
+    const grafico_2 = document.getElementById('myChart_2');
 
     new Chart(grafico, {
         type: 'line',
         data: {
-            labels: ['13:00','14:00','15:00','16:00','17:00'],
+            labels: ['12:00','13:00','14:00','15:00','16:00','17:00'],
             datasets: [
             {
                 label: 'Temperatura',
@@ -31,6 +39,36 @@
             {
                 label: 'Umidade',
                 data: [80,82,80,85,80,83],
+                borderWidth: 2 ,
+                borderColor: 'red',
+                backgroundColor: 'red'
+            }
+            ]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    })
+
+    new Chart(grafico_2, {
+        type: 'bar',
+        data: {
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+            datasets: [
+            {
+                label: 'Temperatura',
+                data:[22,24,27,23,20,18],
+                borderWidth: 2,
+                borderColor: 'blue',
+                backgroundColor: 'blue'
+            },
+            {
+                label: 'Umidade',
+                data: [90,89,93,87,88,83],
                 borderWidth: 2 ,
                 borderColor: 'red',
                 backgroundColor: 'red'
